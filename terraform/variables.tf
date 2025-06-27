@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "Your GCP project ID"
   type        = string
-  default     = "type_project_id_here"
+  default     = "lloyds-banking-thp"
 }
 
 variable "region" {
@@ -10,8 +10,3 @@ variable "region" {
   default     = "us-central1"
 }
 
-variable "dataflow_sa" {
-  description = "Service account used to run Dataflow jobs"
-  type        = string
-  default     = "dataflow-worker@"type_project_id_here".iam.gserviceaccount.com"
-}
