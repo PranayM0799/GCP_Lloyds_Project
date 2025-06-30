@@ -1,3 +1,23 @@
-   *.tfstate
-   *.tfstate.backup
-   .terraform/
+    # Python
+    __pycache__/
+    *.pyc
+    *.pyo
+    *.pyd
+    venv/
+    dataflow/venv/
+    dataflow/beam-env/
+
+    # Pytest
+    .pytest_cache/
+    tests/.pytest_cache/
+
+    # Terraform
+    *.tfstate
+    *.tfstate.*
+    .terraform/
+
+    # MacOS
+    .DS_Store
+
+    # Environment
+    .env
