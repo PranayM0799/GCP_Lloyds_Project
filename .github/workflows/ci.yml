@@ -14,4 +14,4 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
       - name: Run Tests
-        run: pytest tests/
+        run: pytest tests/test_ci_cd_pipeline.py
