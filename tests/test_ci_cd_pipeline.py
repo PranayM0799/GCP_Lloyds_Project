@@ -1,6 +1,11 @@
 import pytest
 from dataflow.pipeline import CleanCustomer, CleanTransaction
 import subprocess
+import os
+from unittest import mock
+
+# Detect if running in CI (GitHub Actions sets the CI environment variable)
+IS_CI = os.environ.get("CI") == "true"
 
 @pytest.mark.parametrize("element, expected_id, expected_name, expected_age", [
     ("C001,John,Male,5,1990-01-01,30,Engineer,IT,Affluent,N,Y,10.0,123 Main St,12345,CA,USA,500000", "C001", "John", 30),
