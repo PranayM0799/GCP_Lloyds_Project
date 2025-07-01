@@ -1,20 +1,18 @@
-# Python
-__pycache__/
-*.pyc
+# Ignore everything
+*
 
-# Virtual environments
-venv/
-dataflow/venv/
-
-# System files
-.DS_Store
-
-# Pytest cache
-.pytest_cache/
-
-# Terraform state
-terraform/*.tfstate
-terraform/*.tfstate.backup
-
-# Ignore test_pipeline.py if you want
-tests/test_pipeline.py
+# But not these files/folders
+!.gitignore
+!.github/
+!data/
+!dataflow/
+!dataflow/pipeline.py
+!sql/
+!terraform/
+!terraform/main.tf
+!terraform/variables.tf
+!tests/
+!tests/CI_CD_pipeline_test.py
+!High Level.png
+!Low Level.png
+!README.md
