@@ -10,6 +10,7 @@
     # Pytest
     .pytest_cache/
     tests/.pytest_cache/
+    tests/test_pipeline.py
 
     # Terraform
     *.tfstate
