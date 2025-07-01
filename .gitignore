@@ -1,32 +1,20 @@
-    # Python
-    __pycache__/
-    *.pyc
-    *.pyo
-    *.pyd
-    venv/
-    dataflow/venv/
-    dataflow/beam-env/
+# Python
+__pycache__/
+*.pyc
 
-    # Ignore everything
-*
+# Virtual environments
+venv/
+dataflow/venv/
 
-# But not these files...
-!.gitignore
-!dataflow/
-!dataflow/pipeline.py
+# System files
+.DS_Store
 
-    # Pytest
-    .pytest_cache/
-    tests/.pytest_cache/
-    tests/test_pipeline.py
+# Pytest cache
+.pytest_cache/
 
-    # Terraform
-    *.tfstate
-    *.tfstate.*
-    .terraform/
+# Terraform state
+terraform/*.tfstate
+terraform/*.tfstate.backup
 
-    # MacOS
-    .DS_Store
-
-    # Environment
-    .env
+# Ignore test_pipeline.py if you want
+tests/test_pipeline.py
