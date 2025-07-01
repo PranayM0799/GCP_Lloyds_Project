@@ -105,3 +105,86 @@ The Terraform scripts grant the following IAM permissions:
 - Implement data retention and archival policies.
 - Enhance CI/CD with deployment to staging/production environments.
 - Add more analytics and reporting features.
+
+---
+
+## Extras
+
+### GitHub Actions: CI/CD Workflow Example
+
+To automatically run your CI/CD health check on every push or pull request, add the following workflow file:
+
+Create a file at `.github/workflows/ci.yml` with this content:
+
+```yaml
+name: CI/CD Health Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run CI/CD health check test
+        run: pytest tests/CI_CD_pipeline_test.py
+```
+
+This workflow will:
+- Run on every push and pull request to the `main` branch.
+- Set up Python, install pytest, and run your health check test file.
+
+---
+
+### Useful Commands
+
+#### Run the Dataflow Pipeline Locally
+```bash
+cd dataflow
+python pipeline.py --runner DirectRunner
+```
+
+#### Run the Dataflow Pipeline on GCP Dataflow
+```bash
+cd dataflow
+python pipeline.py --runner DataflowRunner --project <your-gcp-project> --temp_location gs://<your-bucket>/temp --region <region>
+```
+
+#### Run All Tests
+```bash
+pytest tests/
+```
+
+#### Run Only the CI/CD Health Check Test
+```bash
+pytest tests/CI_CD_pipeline_test.py
+```
+
+#### Apply Terraform Infrastructure
+```bash
+cd terraform
+terraform init
+terraform apply
+```
+
+#### Run a SQL Script in BigQuery Console
+- Open the BigQuery Console in your browser.
+- Copy the contents of any `.sql` file from the `sql/` directory and paste it into the query editor.
+- Click "Run" to execute.
