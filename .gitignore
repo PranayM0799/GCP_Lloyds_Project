@@ -15,16 +15,6 @@
 !dataflow/
 !dataflow/pipeline.py
 
-# Ignore everything
-*
-
-# But not these files...
-!.gitignore
-!dataflow/
-!dataflow/pipeline.py
-!tests/
-!tests/CI_CD_pipeline_test.py
-
     # Pytest
     .pytest_cache/
     tests/.pytest_cache/
