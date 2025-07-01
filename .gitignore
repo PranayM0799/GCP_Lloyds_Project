@@ -7,6 +7,14 @@
     dataflow/venv/
     dataflow/beam-env/
 
+    # Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!dataflow/
+!dataflow/pipeline.py
+
     # Pytest
     .pytest_cache/
     tests/.pytest_cache/
